@@ -16,6 +16,7 @@ function updateSections(slug, collection) {
         sView = new SectionsView({'collection': Sections});
     }
     model = _.find(collection.models, function(model) {return model.get('slug') === slug;})
+    $("#content-event-name").html(model.get('title'));
     Sections.reset(model.get('sections'));
     $('#content-tabs a:first').tab('show');
     $('.progress > .bar').css('width', '100%');
