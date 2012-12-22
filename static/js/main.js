@@ -8,6 +8,7 @@ function slugify(text) {
 }
 
 function updateSections(slug, collection) {
+    $('.progress > .bar').css('width', '50%');
     if (Sections === null) {
         Sections = new SectionsCollection();
     }
@@ -17,6 +18,23 @@ function updateSections(slug, collection) {
     model = _.find(collection.models, function(model) {return model.get('slug') === slug;})
     Sections.reset(model.get('sections'));
     $('#content-tabs a:first').tab('show');
+    $('.progress > .bar').css('width', '100%');
+    $('.progress').hide();
+}
+
+function genParams(slug, collection) {
+    params = {
+        add: true,
+        dataType: 'jsonp',
+        data: {
+            'slug': slug
+        },
+        success: function(data) {
+            updateSections(slug, collection);
+        }
+    }
+    
+    return params;
 }
 
 $(function() {
@@ -90,17 +108,13 @@ $(function() {
             if (Events === null) {
                 Events = new EventsCollection();
             }
+            
+            $('.progress > .bar').css('width', '0%');
+            $('.progress').show();
+            
             if (!_.find(Events.models, function(model) {return model.get('slug') === slug;})) {
-                Events.fetch({
-                    add: true,
-                    dataType: 'jsonp',
-                    data: {
-                        'slug': slug
-                    },
-                    success: function(data) {
-                        updateSections(slug, Events);
-                    }
-                });
+                $('.progress > .bar').css('width', '35%');
+                Events.fetch(genParams(slug, Events));
             }
             else {
                 updateSections(slug, Events);
@@ -110,17 +124,13 @@ $(function() {
             if (Pages === null) {
                 Pages = new PagesCollection();
             }
+            
+            $('.progress > .bar').css('width', '0%');
+            $('.progress').show();
+            
             if (!_.find(Pages.models, function(model) {return model.get('slug') === slug;})) {
-                Pages.fetch({
-                    add: true,
-                    dataType: 'jsonp',
-                    data: {
-                        'slug': slug
-                    },
-                    success: function(data) {
-                        updateSections(slug, Pages);
-                    }
-                });
+                $('.progress > .bar').css('width', '35%');
+                Pages.fetch(genParams(slug, Pages));
             }
             else {
                 updateSections(slug, Pages);

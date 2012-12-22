@@ -10,7 +10,7 @@
         <meta name="description" content="The annual techno-management festival of IIT BHU, Varanasi">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/css/bootstrapcosmo.min.css">
         <style>
             body {
                 padding-top: 60px;
@@ -27,9 +27,7 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
-
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -40,9 +38,11 @@
                     <a class="brand" href="#">Technex 2013</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li class="active"><a href="#pages/home/">Home</a></li>
+                            <li><a href="#pages/home/">Home</a></li>
+                            <li><a href="#pages/gallery/">Gallery</a></li>
                             <li><a href="#pages/hospitality/">Hospitality</a></li>
                             <li><a href="#pages/contacts/">Contacts</a></li>
+                            <li><a href="#pages/sponsors/">Sponsors</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
@@ -58,11 +58,20 @@
                             <li><a href="#events/technical-events/">Technical Events</a></li>
                             <li><a href="#events/management-events/">Management Events</a></li>
                             <li><a href="#events/modex/">Modex</a></li>
+                            <li><a href="#events/greenx/">GreenX</a></li>
+                            <li><a href="#events/byte-the-bits/">Byte the Bits</a></li>
+                            <li><a href="#events/on-spot-events/">On Spot Events</a></li>
+                            <li><a href="#events/workshops/">Workshops</a></li>
+                            <li><a href="#events/guest-lectures/">Guest Lectures</a></li>
+                            <li><a href="#events/attractions/">Attractions</a></li>
                         </ul>
                     </div>
                 </div> <!-- vertical nav bar -->
 
                 <div class="span10">
+                    <div class="progress">
+                        <div class="bar" style="width: 0%;"></div>
+                    </div>
                     <ul class="nav nav-tabs" id="content-tabs"></ul>
                     <div class="tab-content" id="content-tabs-data"></div>
                 </div> <!-- /container -->
@@ -83,7 +92,7 @@
         <script src="static/js/main.js"></script>
 
         <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            var _gaq=[['_setAccount','UA-26873860-1'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
