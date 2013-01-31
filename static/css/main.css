@@ -4,19 +4,46 @@
    Author's custom styles
    ========================================================================== */
 
+#technex_wrap{
+}
 
+#technex_img{
+    padding-left: 1em;
+    max-width: 30%;
+}
 
+#technex_name{
+    padding-top: 20px;    
+}
 
+#colg_wrap{
+    text-align: right;
+}
 
+#colg_name{
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 1em;
+}
 
+#colg_tag{
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 0.9em;
+}
 
+#iitbhu_wrap{
+    text-align: right;
+}
 
+#iitbhu_logo{
+    float: none;
+}
 
+.header{
+    background: rgb(245, 245, 201);
+    padding: 20px 0;
+}
 
-
-
-
-
-
-
-
+.fb-login-button{
+    float: right;
+    margin-top: 1%;
+}

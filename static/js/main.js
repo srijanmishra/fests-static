@@ -1,4 +1,4 @@
-var apiUrl = 'http://fests.herokuapp.com/api/v1/';
+var apiUrl = 'localhost:8000/api/v1/';
 var Events = null, Pages = null, Sections = null, sView = null;
 
 function slugify(text) {

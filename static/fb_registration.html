@@ -1,0 +1,65 @@
+<script type="text/javascript">
+window.fbAsyncInit = function() {
+			FB.init({
+			  appId      : '461359507257085',
+			  channelUrl : '//localhost:9295/channel.html',
+			  status     : true,
+			  cookie     : true,
+			  xfbml      : true
+			});
+			FB.getLoginStatus(function(response) {
+				if (response.status === 'connected') {
+					getUserDetails(response.authResponse.userID);
+				}
+			});
+			function getUserDetails(user_id){
+				var fb_connect_url = "//localhost:8000/fb-connect/?format=json&userID=" + user_id;
+				$.ajax({
+					method: 'GET',
+					url: fb-connect-url,
+					dataType: 'JSON',
+					success: function(response){
+						console.log(response);
+					}
+				});
+			}
+			function postToWall(){
+				FB.ui(
+				  {
+				   method: 'feed',
+				   name: 'Technex 2013',
+				   caption: 'Bringing Facebook to the desktop and mobile web',
+				   description: (
+					  'A small JavaScript library that allows you to harness ' +
+					  'the power of Facebook, bringing the user\'s identity, ' +
+					  'social graph and distribution power to your site.'
+				   ),
+				   link: 'https://developers.facebook.com/docs/reference/javascript/',
+				   picture: 'http://www.fbrell.com/public/f8.jpg'
+				  },
+				  function(response) {
+					if (response && response.post_id) {
+					  alert('Post was published.');
+					} else {
+					  alert('Post was not published.');
+					}
+				  }
+				);
+			}
+		};
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=461359507257085";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		</script>
+<div id="fb-root"></div>
+<script src="https://connect.facebook.net/en_US/all.js#appId=461359507257085&xfbml=1"></script>
+
+<fb:registration
+  fields="name,birthday,gender,location,email"
+  redirect-uri="http://localhost:8000/fbconnect/"
+  width="530">
+</fb:registration>
