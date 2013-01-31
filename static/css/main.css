@@ -43,7 +43,25 @@
     padding: 20px 0;
 }
 
-.fb-login-button{
+.fb-login-status{
     float: right;
     margin-top: 1%;
+}
+
+.active{
+    background-color: #007fff;
+    color: #ffffff;
+    position: relative;
+}
+
+.active:after{
+    content: "";
+    position: absolute;
+    top: 30%;
+    right: -7px;
+    width:0px; 
+    height:0px; 
+    border-bottom:7px solid transparent;
+    border-top:7px solid transparent;
+    border-left:7px solid #007fff;
 }

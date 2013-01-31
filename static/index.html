@@ -34,17 +34,23 @@
 			  cookie     : true,
 			  xfbml      : true
 			});
-			/*
 			FB.getLoginStatus(function(response) {
 				if (response.status === 'connected') {
-					getUserDetails(response.authResponse.userID);
+					console.log("User fully connected via FB");
+					$('.fb-login-status').html('');
+				}
+				else if(response.status === 'not_authorized'){
+					console.log("App not authorized by user");
+				}
+				else{
+					console.log("User logged out of facebook");
 				}
 			});
 			function getUserDetails(user_id){
 				var fb_connect_url = "//localhost:8000/fb-connect/?format=json&userID=" + user_id;
 				$.ajax({
 					method: 'GET',
-					url: fb-connect-url,
+					url: fb_connect_url,
 					dataType: 'JSON',
 					success: function(response){
 						console.log(response);
@@ -72,7 +78,6 @@
 				  }
 				);
 			}
-			*/
 		};
 		(function(d, s, id) {
 			var js, fjs = d.getElementsByTagName(s)[0];
@@ -105,7 +110,8 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</a>
-						<a class="brand" href="#">7th - 10th March</a>
+						<a class="brand" href="#"></a>
+						<div class="span2" style="margin-top: 1%">7th - 10th March</div>
 						<div class="nav-collapse collapse">
 							<ul class="nav">
 								<li><a href="#pages/home/">Home</a></li>
@@ -116,7 +122,9 @@
 								<li><a href="#pages/sponsors/">Sponsors</a></li>
 							</ul>
 						</div><!--/.nav-collapse -->
-						<div class="fb-login-button" data-registration-url="//localhost:9295/static/fb_registration.html" data-show-faces="false" data-width="200" data-max-rows="1" data-scope="publish_stream"></div>
+						<div class="fb-login-status">
+							<div class="fb-login-button" data-registration-url="//localhost:9295/static/fb_registration.html" data-show-faces="false" data-width="200" data-max-rows="1" data-scope="publish_stream"></div>
+						</div>
 					</div>
 				</div>
 			</div>

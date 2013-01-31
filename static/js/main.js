@@ -142,3 +142,8 @@ $(function() {
     var app = new AppRouter();
     Backbone.history.start();
 });
+
+$(".nav a").click(function(){
+    $(".nav a").removeClass('active');
+    $(this).addClass('active');
+});
