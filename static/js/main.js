@@ -142,3 +142,8 @@ $(function() {
     var app = new AppRouter();
     Backbone.history.start();
 });
+
+$(".nav-stacked a").click(function(){
+    $(".nav-stacked a").removeClass('active-nav');
+    $(this).addClass('active-nav');
+});
