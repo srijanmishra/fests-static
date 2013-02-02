@@ -144,6 +144,6 @@ $(function() {
 });
 
 $(".nav-stacked a").click(function(){
-    $(".nav-stacked a").removeClass('active');
-    $(this).addClass('active');
+    $(".nav-stacked a").removeClass('active-nav');
+    $(this).addClass('active-nav');
 });

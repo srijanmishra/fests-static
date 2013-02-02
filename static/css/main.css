@@ -48,13 +48,13 @@
     margin-top: 1%;
 }
 
-.active{
+.active-nav{
     background-color: #007fff;
     color: #ffffff;
     position: relative;
 }
 
-.active:after{
+.active-nav:after{
     content: "";
     position: absolute;
     top: 30%;
