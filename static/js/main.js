@@ -143,7 +143,11 @@ $(function() {
     Backbone.history.start();
 });
 
+$(".nav a").click(function(){
+    $('.nav a').removeClass('active-nav');
+});
+
+
 $(".nav-stacked a").click(function(){
-    $(".nav-stacked a").removeClass('active-nav');
     $(this).addClass('active-nav');
 });
